@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+header {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* logo sempre à esquerda */
+  padding: 20px 50px;
+  position: relative;
+}
+
+.logo {
+  position: relative;
+  z-index: 2;
+}
+
+.logo img {
+  height: 40px;
+}
+
+nav {
+  position: absolute;
+  top: 50%; /* centraliza verticalmente no header */
+  left: 50%; /* centraliza horizontalmente */
+  transform: translate(-50%, -50%);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 200px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  color: #3da9fc;
+  transition: color 0.2s;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+}
+
+.carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+main h1 {
+  position: relative;
+  z-index: 5;
+  color: #000;
+  font-size: 2rem;
+  max-width: 600px;
+  line-height: 1.4;
+  margin: 100px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 30px;
+  left: 70px;
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+  background-color: transparent;
+}
+
+.dot {
+  width: 12px; /* antes 20px */
+  height: 12px; /* antes 20px */
+  border-radius: 50%;
+  background: #1e1e1e;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #f9c74f;
+  opacity: 1;
+}
+
+/* Seção Quem Somos */
+.quem-somos {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: #ffffff;
+}
+
+.quem-somos-conteudo {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.quem-somos-texto {
+  flex: 1;
+}
+
+.quem-somos-img {
+  max-width: 350px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  margin-left: 60 tttttttttttttttttttttpx; /* ajuste o valor como preferir */
+}
+
+.quem-somos p {
+  font-size: 1.2rem; /* aumentado de 1.1rem para 1.5rem */
+  color: #000;
+  max-width: 800px;
+  margin: 0;
+  line-height: 1.6;
+  flex: 1;
+  text-align: justify;
+}
+
+/* Cursos Recomendados */
+.cursos-recomendados {
+  background: #fff;
+  padding: 30px 0 40px 0;
+  margin-top: 30px;
+}
+
+.cursos-recomendados h2 {
+  background: #3da9fc;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 3px;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px 30px;
+  max-width: 1800px; /* aumente para telas grandes */
+  margin: 0 auto;
+}
+
+@media (min-width: 1400px) {
+  .cursos-grid {
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* 4 colunas em telas muito grandes */
+    max-width: 2200px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .cursos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cursos-grid {
+    grid-template-columns: 1fr;
+    max-width: 95vw;
+  }
+  .curso-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+.curso-card {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.curso-img {
+  width: 120px;
+  height: 80px;
+  background: #3da9fc;
+  border-radius: 25px;
+}
+
+.curso-info {
+  color: #111;
+  font-size: 1rem;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Filtros para os cursos */
+.cursos-filtros {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.filtro-btn {
+  background: #e6e6e6;
+  color: #222;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 22px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+.filtro-btn.ativo,
+.filtro-btn:hover {
+  background: #3da9fc;
+  color: #fff;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    position: static;
+    transform: none;
+    margin-top: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  main h1 {
+    font-size: 1.5rem;
+    margin: 50px 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .quem-somos-conteudo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .quem-somos-img {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .quem-somos-conteudo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+  .quem-somos-texto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+  .quem-somos-img {
+    margin-left: 0;
+    margin-bottom: 0;
+    max-width: 500px;
+  }
+}
+
+.img1 {
+  background-image: url("assets/curso1.jpg");
+}
+.img2 {
+  background-image: url("assets/curso2.jpg");
+}
