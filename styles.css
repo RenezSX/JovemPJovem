@@ -237,7 +237,7 @@ main h1 {
 .curso-icone {
   min-width: 56px;
   min-height: 56px;
-  background: #e9cfc7;
+  background: #3da9fc;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -430,4 +430,57 @@ footer {
 }
 .img2 {
   background-image: url("assets/curso2.jpg");
+}
+
+.bloco-linha {
+  display: flex;
+  align-items: center;
+  gap: 2.5em;
+  margin: 3em 0;
+}
+.bloco-linha.invertido {
+  flex-direction: row-reverse;
+}
+.bloco-img img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #0001;
+}
+.bloco-texto {
+  max-width: 500px;
+}
+.bloco-texto h1 {
+  color: #2776b6;
+  font-size: 1.7rem;
+  margin-bottom: 0.7em;
+}
+.bloco-texto p {
+  font-size: 1.08rem;
+  color: #333;
+}
+@media (max-width: 900px) {
+  .bloco-linha,
+  .bloco-linha.invertido {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5em;
+  }
+  .bloco-img img {
+    max-width: 95vw;
+  }
+  .bloco-texto {
+    max-width: 100%;
+  }
+}
+
+.texto-borda {
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+@media (max-width: 900px) {
+  .texto-borda {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
 }

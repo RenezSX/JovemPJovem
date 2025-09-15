@@ -43,30 +43,30 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Seleciona todos os corações
-const favoritos = document.querySelectorAll('.curso-favorito');
+const favoritos = document.querySelectorAll(".curso-favorito");
 
 // Carrega favoritos do localStorage
-let favoritosSalvos = JSON.parse(localStorage.getItem('cursosFavoritos')) || [];
+let favoritosSalvos = JSON.parse(localStorage.getItem("cursosFavoritos")) || [];
 
 // Marca os que já estavam salvos
 favoritos.forEach((btn, index) => {
   if (favoritosSalvos.includes(index)) {
-    btn.classList.add('favorito-ativo');
-    btn.innerHTML = '&#9829;'; // coração cheio
+    btn.classList.add("favorito-ativo");
+    btn.innerHTML = "&#9829;"; // coração cheio
   }
 
   // Ao clicar, alterna
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('favorito-ativo');
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("favorito-ativo");
 
-    if (btn.classList.contains('favorito-ativo')) {
-      btn.innerHTML = '&#10084;';
+    if (btn.classList.contains("favorito-ativo")) {
+      btn.innerHTML = "&#10084;";
       favoritosSalvos.push(index);
     } else {
-      btn.innerHTML = '&#9825;';
-      favoritosSalvos = favoritosSalvos.filter(i => i !== index);
+      btn.innerHTML = "&#9825;";
+      favoritosSalvos = favoritosSalvos.filter((i) => i !== index);
     }
 
-    localStorage.setItem('cursosFavoritos', JSON.stringify(favoritosSalvos));
+    localStorage.setItem("cursosFavoritos", JSON.stringify(favoritosSalvos));
   });
 });
